@@ -1,0 +1,24 @@
+def de_str(s):
+    list = []
+    i = 0
+    for ch in s:
+        if ch != ']':
+            list.append(ch)
+        else:
+            sub = ''
+            while list[-1] != '[':
+                sub = list.pop() + sub
+            list.pop()
+ 
+            num = ''
+            while list and list[-1].isdigit():
+                num = list.pop() + num
+ 
+ 
+            list.append(sub * int(num))
+ 
+        i += 1
+ 
+    return ''.join(list)
+m = input("enter the ")
+output = print("th eout ",de_str(m))

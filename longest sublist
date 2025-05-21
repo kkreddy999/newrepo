@@ -1,0 +1,14 @@
+def longest(n):
+    length = 0
+    l = []
+ 
+    for i in n:
+        if i  not in l:
+            l.append(i)
+        else:
+            l = l[l.index(i)+1:]
+            l.append(i)
+        length = max(length,len(l))
+    return length
+m = list(map(int, input("some ").split(',')))
+print(f"max length is: {longest(m)}")

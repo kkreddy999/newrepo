@@ -1,0 +1,53 @@
+# Function to compress the string
+def compress(input_string):
+    # String to hold the compressed result
+    compressed = []
+    
+    # Variable to track the count of consecutive characters
+    count = 1
+    
+    # Loop through the string starting from the second character
+    for i in range(1, len(input_string)):
+        # If the current character is the same as the previous one
+        if input_string[i] == input_string[i - 1]:
+            count += 1  # Increment the count
+        else:
+            # Append the previous character and its count to the result
+            compressed.append(input_string[i - 1] + str(count))
+            count = 1  # Reset the count
+    
+    # Append the last character and its count
+    compressed.append(input_string[-1] + str(count))
+    
+    # If the compressed string is not smaller than the original, return the original string
+    compressed_string = ''.join(compressed)
+    return compressed_string if len(compressed_string) < len(input_string) else input_string
+
+# Function to decompress the string
+def decompress(compressed_string):
+    # String to hold the decompressed result
+    decompressed = []
+    
+    # Loop through the compressed string, two characters at a time (character + count)
+    i = 0
+    while i < len(compressed_string):
+        char = compressed_string[i]  # Character
+        count = int(compressed_string[i + 1])  # Count of occurrences
+        # Append the character 'count' times to the result
+        decompressed.append(char * count)
+        i += 2  # Move to the next character-count pair
+    
+    # Join the list into a final string
+    return ''.join(decompressed)
+
+# Driver code
+if __name__ == "__main__":
+    input_string = "aaabbbcccddee"  # Example input string
+
+    # Compress the string
+    compressed_string = compress(input_string)
+    print(f"Compressed: {compressed_string}")
+
+    # Decompress the string
+    decompressed_string = decompress(compressed_string)
+    print(f"Decompressed: {decompressed_string}")

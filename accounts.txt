@@ -1,0 +1,12 @@
+{
+    "siri": {
+        "pin": "1234",
+        "balance": 5250.0,
+        "history": [
+            "2025-04-29 12:45:05 - Deposit: $250.00",
+            "2025-04-29 12:54:59 - Deposit: $5000.00"
+        ],
+        "locked": false,
+        "login_attempts": 0
+    }
+}

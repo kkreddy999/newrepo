@@ -1,0 +1,32 @@
+def evaluate(s):
+    nums = []
+    ops = []
+    num = 0
+ 
+    for i in range(len(s)):
+        ch = s[i]
+        if ch.isdigit():
+            num = num * 10 + int(ch)
+        if not ch.isdigit() or i == len(s) - 1:
+            nums.append(num)
+            num = 0
+            if ops and ops[-1] == '*':
+                b = nums.pop()
+                a = nums.pop()
+                nums.append(a * b)
+                ops.pop()
+            if ch in '+-*':
+                ops.append(ch)
+ 
+    result = nums[0]
+    for i in range(len(ops)):
+        op = ops[i]
+        val = nums[i + 1]
+        if op == '+':
+            result += val
+        elif op == '-':
+            result -= val
+ 
+    return result
+n = input("enter the exp")
+m = print("the total is :", evaluate(n))

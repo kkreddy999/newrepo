@@ -1,0 +1,30 @@
+[
+    {
+        "amount": 3000.0,
+        "category": "groceries",
+        "date": "2025-05-06",
+        "type": "income",
+        "description": ""
+    },
+    {
+        "amount": 2355667.0,
+        "category": "salary",
+        "date": "2025-05-06",
+        "type": "58976",
+        "description": ""
+    },
+    {
+        "amount": 78000.0,
+        "category": "food",
+        "date": "2025-05-06",
+        "type": "80000",
+        "description": ""
+    },
+    {
+        "amount": 5000.0,
+        "category": "546",
+        "date": "9999-06-23",
+        "type": "income",
+        "description": "tgy"
+    }
+]
